@@ -48,6 +48,7 @@ for client in clientlist:
   if version != "3.0.18.2":
     if version != "ServerQuery":
       #Target client
+      msg="Outdated\\sclient\\sversion\\sdetected:\\s%s\\s%s\\s" % (client['client_nickname'], version)
       sock.send('sendtextmessage targetmode=1 target='+client['clid']+' msg='+msg+'\n\n')
       sock.recv(1024)
 sock.send('quit\n\n')
